@@ -2,9 +2,9 @@
 
 using UnrealBuildTool;
 
-public class UnrealExamples : ModuleRules
+public class RPMAvatar : ModuleRules
 {
-	public UnrealExamples(ReadOnlyTargetRules Target) : base(Target)
+	public RPMAvatar(ReadOnlyTargetRules Target) : base(Target)
 	{
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 

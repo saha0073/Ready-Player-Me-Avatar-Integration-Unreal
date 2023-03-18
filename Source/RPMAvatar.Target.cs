@@ -3,12 +3,12 @@
 using UnrealBuildTool;
 using System.Collections.Generic;
 
-public class UnrealExamplesTarget : TargetRules
+public class RPMAvatarTarget : TargetRules
 {
-	public UnrealExamplesTarget(TargetInfo Target) : base(Target)
+	public RPMAvatarTarget(TargetInfo Target) : base(Target)
 	{
 		Type = TargetType.Game;
 		DefaultBuildSettings = BuildSettingsVersion.V2;
-		ExtraModuleNames.Add("UnrealExamples");
+		ExtraModuleNames.Add("RPMAvatar");
 	}
 }

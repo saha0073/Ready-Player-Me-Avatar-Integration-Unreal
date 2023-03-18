@@ -5,7 +5,7 @@
 	"Description": "",
 	"Modules": [
 		{
-			"Name": "UnrealExamples",
+			"Name": "RPMAvatar",
 			"Type": "Runtime",
 			"LoadingPhase": "Default"
 		}

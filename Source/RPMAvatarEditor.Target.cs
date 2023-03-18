@@ -3,12 +3,12 @@
 using UnrealBuildTool;
 using System.Collections.Generic;
 
-public class UnrealExamplesEditorTarget : TargetRules
+public class RPMAvatarEditorTarget : TargetRules
 {
-	public UnrealExamplesEditorTarget(TargetInfo Target) : base(Target)
+	public RPMAvatarEditorTarget(TargetInfo Target) : base(Target)
 	{
 		Type = TargetType.Editor;
 		DefaultBuildSettings = BuildSettingsVersion.V2;
-		ExtraModuleNames.Add("UnrealExamples");
+		ExtraModuleNames.Add("RPMAvatar");
 	}
 }
