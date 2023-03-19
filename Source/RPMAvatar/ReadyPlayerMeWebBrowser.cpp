@@ -1,6 +1,6 @@
-// Copyright © 2021++ Ready Player Me
 
 #include "ReadyPlayerMeWebBrowser.h"
+#include "Engine/GameEngine.h"
 
 static const FString LinkObjectName = TEXT("rpmlinkobject");
 static const FString JSAddAvatarGeneratedListener = TEXT("window.addEventListener('message', function(event){ window.ue.rpmlinkobject.avatargenerated(event.data);});");
@@ -15,6 +15,9 @@ static const TCHAR* GenderFemaleParam = TEXT("gender=female");
 
 void UReadyPlayerMeWebBrowser::SetupBrowser(const FReadyPlayerWebBrowserResponse& Response)
 {
+	GEngine->AddOnScreenDebugMessage(-1, 60.0f, FColor::Yellow, FString::Printf(TEXT("SetupBrowser() in ReadyPlayerWebBrowser.cpp")));
+	UE_LOG(LogTemp, Warning, TEXT("SetupBrowser() in ReadyPlayerWebBrowser.cpp"));
+
 	BindBrowserToObject();
 	WebLinkObject->SetAvatarUrlCallback(Response);
 	ExecuteJavascript(JSAddAvatarGeneratedListener);

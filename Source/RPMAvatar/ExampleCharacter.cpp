@@ -1,4 +1,3 @@
-// Copyright Epic Games, Inc. All Rights Reserved.
 
 #include "ExampleCharacter.h"
 #include "Camera/CameraComponent.h"

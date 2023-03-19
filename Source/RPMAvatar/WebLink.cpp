@@ -1,10 +1,10 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
-
 #include "WebLink.h"
 
 void UWebLink::AvatarGenerated(FString JsonResponse)
 {
+	GEngine->AddOnScreenDebugMessage(-1, 60.0f, FColor::Yellow, FString::Printf(TEXT("AvatarGenerated() in WebLink.cpp")));
+	UE_LOG(LogTemp, Warning, TEXT("AvatarGenerated() in WebLink.cpp"));
+
 	FString Url = "";
 	if (JsonResponse.Contains(TEXT(".glb")))
 	{
