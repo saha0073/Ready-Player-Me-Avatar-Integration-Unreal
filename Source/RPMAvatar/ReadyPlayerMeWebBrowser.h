@@ -36,6 +36,9 @@ public:
 	UFUNCTION(BlueprintCallable, meta = (DisplayName = "Setup Browser"), Category = "Ready Player Me|Web Browser")
 	void SetupBrowser(const FReadyPlayerWebBrowserResponse& Response);
 
+	//UFUNCTION(BlueprintCallable, meta = (DisplayName = "RPM Set Callback"), Category = "Ready Player Me")
+	//void SetAvatarUrlCallback(const FReadyPlayerWebBrowserResponse& WebBrowserCallback);
+
 	UFUNCTION(BlueprintCallable, meta = (DisplayName = "Bind Browser To Object"), Category = "Ready Player Me|Web Browser")
 	void BindBrowserToObject();
 
@@ -50,7 +53,9 @@ public:
 
 protected:
 	virtual TSharedRef<SWidget> RebuildWidget() override;
-	
+
+	//FReadyPlayerWebBrowserResponse WebBrowserResponse;
+
 	UPROPERTY()
 	UWebLink* WebLinkObject;
 };

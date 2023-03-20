@@ -15,6 +15,9 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Ready Player Me")
 	void AvatarGenerated(FString JsonResponse);
 
+	//UFUNCTION(BlueprintCallable, meta = (DisplayName = "Setup Browser"), Category = "Ready Player Me|Web Browser")
+	//void SetupBrowser(const FReadyPlayerWebBrowserResponse& Response);
+
 	UFUNCTION(BlueprintCallable, meta = (DisplayName = "RPM Set Callback"), Category = "Ready Player Me")
 	void SetAvatarUrlCallback(const FReadyPlayerWebBrowserResponse& WebBrowserCallback);
 
@@ -24,5 +27,8 @@ public:
 private:
 
 	FReadyPlayerWebBrowserResponse WebBrowserResponse;
+
 	FString LastAvatarUrl;
+
+	//virtual TSharedRef<SWidget> RebuildWidget() override;
 };

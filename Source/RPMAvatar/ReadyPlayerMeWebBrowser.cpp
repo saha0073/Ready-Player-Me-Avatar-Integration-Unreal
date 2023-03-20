@@ -15,20 +15,23 @@ static const TCHAR* GenderFemaleParam = TEXT("gender=female");
 
 void UReadyPlayerMeWebBrowser::SetupBrowser(const FReadyPlayerWebBrowserResponse& Response)
 {
-	GEngine->AddOnScreenDebugMessage(-1, 60.0f, FColor::Yellow, FString::Printf(TEXT("SetupBrowser() in ReadyPlayerWebBrowser.cpp")));
-	UE_LOG(LogTemp, Warning, TEXT("SetupBrowser() in ReadyPlayerWebBrowser.cpp"));
+	//GEngine->AddOnScreenDebugMessage(-1, 60.0f, FColor::Yellow, FString::Printf(TEXT("SetupBrowser() in ReadyPlayerWebBrowser.cpp")));
+	//UE_LOG(LogTemp, Warning, TEXT("SetupBrowser() in ReadyPlayerWebBrowser.cpp"));
 
 	BindBrowserToObject();
 	WebLinkObject->SetAvatarUrlCallback(Response);
-	ExecuteJavascript(JSAddAvatarGeneratedListener);
+	ExecuteJavascript(JSAddAvatarGeneratedListener);  //Now JavaScript is doing the work that let user to select avatar and returns a glb url
 }
 
 void UReadyPlayerMeWebBrowser::BindBrowserToObject()
-{
+{   //creates weblink object, and creates binds. Uses the same rpmlinkobject for WebLinkObject and JSListener
 	if (!WebLinkObject) {
 		WebLinkObject = NewObject<UWebLink>(this, *LinkObjectName);
 	}
 	WebBrowserWidget->BindUObject(LinkObjectName, WebLinkObject);
+
+	//GEngine->AddOnScreenDebugMessage(-1, 60.0f, FColor::Yellow, FString::Printf(TEXT("BindBrowserToObject in ReadyPlayerWebBrowser.cpp")));
+	//UE_LOG(LogTemp, Warning, TEXT("BindBrowserToObject in ReadyPlayerWebBrowser.cpp"));
 }
 
 TSharedRef<SWidget> UReadyPlayerMeWebBrowser::RebuildWidget()
